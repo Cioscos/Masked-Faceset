@@ -57,7 +57,7 @@ def process_image(file_info: tuple[Path, str]):
     xseg = cv2.resize(xseg, (img_a.shape[1], img_a.shape[0]))
     xseg = cv2.cvtColor(xseg, cv2.COLOR_GRAY2BGR)
 
-    final = np.where(xseg, img_a, (0, 0, 0))
+    final = np.multiply(img_a, xseg)
 
     _, buffer = cv2.imencode('.jpg', final)
     img_byte_arr = BytesIO(buffer)
