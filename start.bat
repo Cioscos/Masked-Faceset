@@ -9,7 +9,7 @@ if exist ".\venv\" (
 
 python -m venv venv
 call .\venv\Scripts\activate
-pip install -r requirements.txt
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
 
 :run
 
